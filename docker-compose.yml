@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  macondo:
+    image: macondo
+    restart: always
+    container_name: macondo
+    hostname: macondo
+    expose:
+      - 22
+      - 8080
+      - 4000
+      - 8983
+    ports:
+      - "4000:4000"
+      - "5022:22"
+      - "8983:8983"
+      - "8080:8080"
+    volumes:
+      - ./build:/build:rw
